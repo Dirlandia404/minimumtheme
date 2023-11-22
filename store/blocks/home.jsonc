@@ -1,12 +1,6 @@
-// minimum-boilerplate-theme/store/blocks/home.jsonc
 {
   "store.home": {
-    "blocks": [
-      "rich-text",
-      "category-menu",
-      "info-card#clearance",
-      "info-card#vintage"
-    ]
+    "blocks": ["rich-text", "category-menu", "list-context.product-list#demo1"]
   },
   "rich-text": {
     "props": {
@@ -25,29 +19,34 @@
       "sortSubcategories": "name"
     }
   },
-  "info-card#clearance": {
-    "props": {
-      "id": "info-card-clearance",
-      "isFullModeStyle": false,
-      "textPosition": "left",
-      "imageUrl": "https://storecomponents.vteximg.com.br/arquivos/banner-infocard2.png",
-      "headline": "Clearance Sale",
-      "callToActionText": "DISCOVER",
-      "callToActionUrl": "/sale/d",
-      "textAlignment": "center"
-    }
+
+  "list-context.product-list#demo1": {
+    "blocks": ["product-summary.shelf#demo1"],
+    "children": ["slider-layout#demo-products"]
   },
-  "info-card#vintage": {
+
+  "product-summary.shelf#demo1": {
+    "children": [
+      "product-summary-name",
+      "product-summary-description",
+      "product-summary-image",
+      "product-summary-price",
+      "product-summary-sku-selector",
+      "product-summary-buy-button"
+    ]
+  },
+
+  "slider-layout#demo-products": {
     "props": {
-      "id": "info-card-vintage",
-      "isFullModeStyle": false,
-      "textPosition": "right",
-      "imageUrl": "https://appliancetheme.vteximg.com.br/arquivos/cozinha-rosa-min.png",
-      "headline": "Vintage",
-      "callToActionText": "DISCOVER",
-      "callToActionUrl": "/sale/d",
-      "textAlignment": "center",
-      "blockClass": "vintage"
-    }
+      "itemsPerPage": {
+        "desktop": 5,
+        "tablet": 2,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "list-context "
+    },
+    "children": []
   }
 }
